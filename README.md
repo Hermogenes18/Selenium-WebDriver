@@ -9,7 +9,7 @@ Lo interesante de Selenium es que se pueden editar acciones o crearlas desde cer
 Se crea un proyecyo java en un IDE, luego se pasa a agregar los JAR's que fueron descargados de la pagina web de Selenium.
 
 
-<img src="./img/libr.png" width="200">
+<img src="./img/libr.png" width="700">
 
 
 
@@ -70,6 +70,6 @@ System.setProperty("webdriver.gecko.driver","/home/hermogenes/eclipse-workspace/
 ## Pruebas
 Se procede a ejecutar como una aplicación java. Al momento de la ejecución se abrirá el navegador para el cual configuramos nuestro proyecto y re realizarán las pruebas.
 
-<img src="./img/consola.png" width="200">
+<img src="./img/consola.png" width="700">
 
-<img src="./img/prueba.png" width="200">
+<img src="./img/prueba.png" width="700">
