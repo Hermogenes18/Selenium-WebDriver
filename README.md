@@ -38,47 +38,47 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class webdriverdemo {
    public static void main(String[] args) {
-   
+
       WebDriver driver = new FirefoxDriver();
       //Puts an Implicit wait, Will wait for 10 seconds before throwing exception
       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      
+
       //Launch website
       driver.navigate().to("http://www.calculator.net/");
-      
+
       //Maximize the browser
       driver.manage().window().maximize();
-      
+
       // Click on Math Calculators
       driver.findElement(By.xpath("/html/body/div[4]/div/table/tbody/tr/td[3]/div[2]/a")).click();
-      
+
       // Click on Percent Calculators
       driver.findElement(By.xpath("/html/body/div[3]/div[1]/table[2]/tbody/tr/td/div[3]/a")).click();
-      
-    driver.findElement(By.id("cpar2")).sendKeys("50");
-    
-    String[] tests={"10","10.5","-5","a"};
-    String[] resultArray= {};
-    
-    for(int i=0;i<tests.length-1;i++)
-    {
-    	driver.findElement(By.id("cpar1")).sendKeys(tests[i]);
+
+      driver.findElement(By.id("cpar2")).sendKeys("50");
+
+      String[] tests={"10","10.5","-5","a"};
+      String[] resultArray= {};
+
+      for(int i=0;i<tests.length-1;i++)
+      {
+      driver.findElement(By.id("cpar1")).sendKeys(tests[i]);
         driver.findElement(By.xpath("/html/body/div[3]/div[1]/table[1]/tbody/tr[2]/td/input[2]")).click();
         String result = driver.findElement(By.xpath("/html/body/div[3]/div[1]/p[2]/font/b")).getText();
         System.out.println(" The Result is " + result);
         resultArray = ArrayUtils.add(resultArray,result);
         driver.findElement(By.id("cpar1")).clear();
 
-    }
-   
-    driver.close();
-    
-    String[] expectedArray = {"5","5.25","-2.5",""};
-    
-    assertEquals(resultArray[0], expectedArray[0]);
-    assertEquals(resultArray[1], expectedArray[1]);
-    assertEquals(resultArray[2], expectedArray[2]);
-   }
+      }
+
+      driver.close();
+
+      String[] expectedArray = {"5","5.25","-2.5",""};
+
+      assertEquals(resultArray[0], expectedArray[0]);
+      assertEquals(resultArray[1], expectedArray[1]);
+      assertEquals(resultArray[2], expectedArray[2]);
+      }
 }
 ```
 ## Configurar GeckoDriver 
