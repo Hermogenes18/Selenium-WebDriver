@@ -7,18 +7,24 @@ Lo interesante de Selenium es que se pueden editar acciones o crearlas desde cer
 ## Casos de prueba 
 - <b> Caso 1: Calcular el 10% de 50</b> <br>
    Entradas = 10% y 50 <br>
-   Proceso = 10% of 50 = 0.1 × 50 <br>
-   Resultado Esperado = 5
+   Proceso = <br>
+   - Hacer click en la casilla para ingresar porcentaje e ingresar 10.
+   - Hacer click en la casilla del valor a calcular e ingresar 50. <br>
+   <p>Resultado Esperado = 5</p>
    
 - <b> Caso 1: Calcular el 10.5% de 50</b> <br>
    Entradas = 10.5 y 50 <br>
-   Proceso = 10.5% of 50 = 0.105 × 50  <br>
-   Resultado Esperado = 5.25
+   Proceso = 
+   - Hacer click en la casilla para ingresar porcentaje e ingresar 10.5.
+   - Hacer click en la casilla del valor a calcular e ingresar 50. <br>
+   <p>Resultado Esperado = 5.25</p>
 
 - <b> Caso 1: Calcular el -5% de 50</b> <br>
    Entradas = -5 y 50 <br>
-   Proceso = -5% of 50 = -0.05 × 50 = -2.5  <br>
-   Resultado Esperado = -2.5
+   Proceso =
+   - Hacer click en la casilla para ingresar porcentaje e ingresar -5.
+   - Hacer click en la casilla del valor a calcular e ingresar 50. <br>
+   <p>Resultado Esperado = -2.5 </p>
 
 ## Creación del proyecto
 Se crea un proyecyo java en un IDE, luego se pasa a agregar los JAR's que fueron descargados de la pagina web de Selenium.
