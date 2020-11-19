@@ -4,6 +4,21 @@ Selenium es un entorno de pruebas que se utiliza para comprobar si el software q
 
 Lo interesante de Selenium es que se pueden editar acciones o crearlas desde cero. También ayuda mucho en las pruebas de regresión porque consigue pruebas automatizadas que luego se pueden reutilizar cuando se necesite.
 
+## Casos de prueba 
+- <b> Caso 1: Calcular el 10% de 50</b> <br>
+   Entradas = 10% y 50 <br>
+   Proceso = 10% of 50 = 0.1 × 50 <br>
+   Resultado Esperado = 5
+   
+- <b> Caso 1: Calcular el 10.5% de 50</b> <br>
+   Entradas = 10.5 y 50 <br>
+   Proceso = 10.5% of 50 = 0.105 × 50  <br>
+   Resultado Esperado = 5.25
+
+- <b> Caso 1: Calcular el -5% de 50</b> <br>
+   Entradas = -5 y 50 <br>
+   Proceso = -5% of 50 = -0.05 × 50 = -2.5  <br>
+   Resultado Esperado = -2.5
 
 ## Creación del proyecto
 Se crea un proyecyo java en un IDE, luego se pasa a agregar los JAR's que fueron descargados de la pagina web de Selenium.
@@ -40,24 +55,29 @@ public class webdriverdemo {
       // Click on Percent Calculators
       driver.findElement(By.xpath("/html/body/div[3]/div[1]/table[2]/tbody/tr/td/div[3]/a")).click();
       
-      // Enter value 10 in the first number of the percent Calculator
-      driver.findElement(By.id("cpar1")).sendKeys("10");
-      
-      // Enter value 50 in the second number of the percent Calculator
-      driver.findElement(By.id("cpar2")).sendKeys("50");
-      
-      // Click Calculate Button
-      driver.findElement(By.xpath("/html/body/div[3]/div[1]/table[1]/tbody/tr[2]/td/input[2]")).click();
-      
-      // Get the Result Text based on its xpath
-      String result =
-         driver.findElement(By.xpath("/html/body/div[3]/div[1]/p[2]/font/b")).getText();
+    driver.findElement(By.id("cpar2")).sendKeys("50");
+    
+    String[] tests={"10","10.5","-5","a"};
+    String[] resultArray= {};
+    
+    for(int i=0;i<tests.length-1;i++)
+    {
+    	driver.findElement(By.id("cpar1")).sendKeys(tests[i]);
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/table[1]/tbody/tr[2]/td/input[2]")).click();
+        String result = driver.findElement(By.xpath("/html/body/div[3]/div[1]/p[2]/font/b")).getText();
+        System.out.println(" The Result is " + result);
+        resultArray = ArrayUtils.add(resultArray,result);
+        driver.findElement(By.id("cpar1")).clear();
 
-      // Print a Log In message to the screen
-      System.out.println(" The Result is " + result);
-      
-      //Close the Browser.
-      driver.close();
+    }
+   
+    driver.close();
+    
+    String[] expectedArray = {"5","5.25","-2.5",""};
+    
+    assertEquals(resultArray[0], expectedArray[0]);
+    assertEquals(resultArray[1], expectedArray[1]);
+    assertEquals(resultArray[2], expectedArray[2]);
    }
 }
 ```
