@@ -70,15 +70,8 @@ public class webdriverdemo {
         driver.findElement(By.id("cpar1")).clear();
 
       }
-
       driver.close();
-
-      String[] expectedArray = {"5","5.25","-2.5",""};
-
-      assertEquals(resultArray[0], expectedArray[0]);
-      assertEquals(resultArray[1], expectedArray[1]);
-      assertEquals(resultArray[2], expectedArray[2]);
-      }
+   }
 }
 ```
 ## Configurar GeckoDriver 
