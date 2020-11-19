@@ -83,6 +83,6 @@ System.setProperty("webdriver.gecko.driver","/home/hermogenes/eclipse-workspace/
 ## Pruebas
 Se procede a ejecutar como una aplicación java. Al momento de la ejecución se abrirá el navegador para el cual configuramos nuestro proyecto y re realizarán las pruebas.
 
-<img src="./img/consola.png" width="700">
-
 <img src="./img/prueba.png" width="700">
+
+<img src="./img/result1.png" width="700">
